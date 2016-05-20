@@ -1,0 +1,27 @@
+{
+  "name": "postcss-round-float",
+  "description": "Round floating-point numbers in CSS",
+  "version": "0.0.0",
+  "author": "Kyo Nagashima <hail2u@gmail.com> (https://kyonagashima.com/)",
+  "bugs": {
+    "url": "https://github.com/hail2u/postcss-round-float/issues"
+  },
+  "dependencies": {
+    "postcss": "^5.0.21"
+  },
+  "homepage": "https://github.com/hail2u/postcss-round-float#readme",
+  "keywords": [
+    "css",
+    "float",
+    "postcss-plugin"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hail2u/postcss-round-float.git"
+  },
+  "scripts": {
+    "test": "node test.js"
+  }
+}
