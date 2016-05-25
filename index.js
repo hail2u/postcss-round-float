@@ -7,7 +7,7 @@ var reFloat = /\b(\d+?\.\d+)/g;
 function roundFloat(p, f) {
   f = parseFloat(f);
 
-  if (f === NaN) {
+  if (isNaN(f)) {
     return f;
   }
 
