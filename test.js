@@ -14,11 +14,19 @@ assert.strictEqual(actual, expected, "should round floating-point numbers");
 // 4 places
 expected = ".foo{a:1.2346;b:6.5432;c:1.2346px;d:6.5432px;e:0.1235}";
 actual = postcss().use(require("./index")(4)).process(fixture).css;
-assert.strictEqual(actual, expected, "should round floating-point numbers in 4 places");
+assert.strictEqual(
+  actual,
+  expected,
+  "should round floating-point numbers in 4 places"
+);
 
 // 0 place
 expected = ".foo{a:1;b:7;c:1px;d:7px;e:0}";
 actual = postcss().use(require("./index")(0)).process(fixture).css;
-assert.strictEqual(actual, expected, "should round floating-point numbers to integer");
+assert.strictEqual(
+  actual,
+  expected,
+  "should round floating-point numbers to integer"
+);
 
 console.log("OK");
