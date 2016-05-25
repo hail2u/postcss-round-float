@@ -20,6 +20,12 @@ function roundFloat(p, f) {
   return Math.round(f * p) / p;
 }
 
+function processValues(p, v) {
+  return postcss.list.comma(v).map(function (e) {
+    return e.replace(reFloat, roundFloat.bind(null, p));
+  }).join(",");
+}
+
 module.exports = postcss.plugin("round-float", function (place) {
   if (!Number.isInteger(place) || place < 0) {
     place = 3;
@@ -27,9 +33,10 @@ module.exports = postcss.plugin("round-float", function (place) {
 
   return function (css) {
     css.walkDecls(function (decl) {
-      decl.value = postcss.list.comma(decl.value).map(function (value) {
-        return value.replace(reFloat, roundFloat.bind(null, place));
-      }).join(",");
+      decl.value = processValues(place, decl.value);
+    });
+    css.walkAtRules(function (atRule) {
+      atRule.params = processValues(place, atRule.params);
     });
   };
 });
