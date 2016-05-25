@@ -2,21 +2,25 @@
 
 var postcss = require("postcss");
 
-module.exports = postcss.plugin("round-float", function () {
-  var reFloat = /\b(\d+?\.\d+)/g;
+var reFloat = /\b(\d+?\.\d+)/g;
 
+function roundFloat(p, f) {
+  f = parseFloat(f);
+
+  if (f === NaN) {
+    return f;
+  }
+
+  p = Math.pow(10, p);
+
+  return Math.round(parseFloat(f) * p) / p;
+}
+
+module.exports = postcss.plugin("round-float", function () {
   return function (css) {
     css.walkDecls(function (decl) {
       decl.value = postcss.list.comma(decl.value).map(function (value) {
-        return value.replace(reFloat, function (m) {
-          var f = parseFloat(m);
-
-          if (f === NaN) {
-            return f;
-          }
-
-          return Math.round(parseFloat(f) * 1000) / 1000;
-        });
+        return value.replace(reFloat, roundFloat.bind(null, 3));
       }).join(",");
     });
   };
