@@ -1,7 +1,7 @@
 postcss-round-float
 ===================
 
-This [PostCSS][1] plugin rounds floating-point numbers in CSS file.
+A [PostCSS][1] plugin for rounding floating-point numbers in CSS file
 
 
 INSTALL
