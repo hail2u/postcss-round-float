@@ -1,7 +1,7 @@
 {
   "name": "postcss-round-float",
   "description": "A PostCSS plugin for rounding floating-point numbers in CSS",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Kyo Nagashima <hail2u@gmail.com> (https://kyonagashima.com/)",
   "bugs": {
     "url": "https://github.com/hail2u/postcss-round-float/issues"
