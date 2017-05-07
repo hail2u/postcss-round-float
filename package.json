@@ -7,7 +7,7 @@
     "url": "https://github.com/hail2u/postcss-round-float/issues"
   },
   "dependencies": {
-    "postcss": "^5.0.21"
+    "postcss": "^6.0.0"
   },
   "homepage": "https://github.com/hail2u/postcss-round-float#readme",
   "keywords": [
